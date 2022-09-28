@@ -2,17 +2,17 @@ const router = require('express').Router()
 
 router.get('/', (req, res) => {
   let places = [{
-    name: 'H-Thai-ML',
+    name: 'Dough-nuts eatery',
     city: 'Seattle',
     state: 'WA',
-    cuisines: 'Thai, Pan-Asian',
-    pic: 'http://placekitten.com/250/250'
+    cuisines: 'donuts',
+    pic: '/images/donut.jpg'
   }, {
-    name: 'Coding Cat Cafe',
+    name: 'Lava-Lamp cafe',
     city: 'Phoenix',
     state: 'AZ',
-    cuisines: 'Coffee, Bakery',
-    pic: 'http://placekitten.com/250/250'
+    cuisines: 'Drinks, Bakery',
+    pic: '/images/drink.jpg'
   }]
   
           res.render('places/index', {places}) 

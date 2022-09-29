@@ -19,9 +19,13 @@ router.get('/', (req, res) => {
     pic: '/images/drink.jpg'
   }]
   
-res.render('places/index', {places}) 
+res.render('places', {places}) 
 })
-      
+router.post('/', (req, res) => {
+  console.log(req.body)
+  res.send('POST /places')
+})
+
 
 module.exports = router
 

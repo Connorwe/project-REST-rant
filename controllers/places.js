@@ -1,29 +1,28 @@
 const router = require('express').Router()
+const places = require('../models/places')
+
+router.get('/', (req, res) => {
+  res.render('places', {places}) 
+})
 
 router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
-router.get('/', (req, res) => {
-  let places = [{
-    name: 'Dough-nuts eatery',
-    city: 'Seattle',
-    state: 'WA',
-    cuisines: 'donuts',
-    pic: '/images/donut.jpg'
-  }, {
-    name: 'Lava-Lamp cafe',
-    city: 'Phoenix',
-    state: 'AZ',
-    cuisines: 'Drinks, Bakery',
-    pic: '/images/drink.jpg'
-  }]
-  
-res.render('places', {places}) 
-})
 router.post('/', (req, res) => {
   console.log(req.body)
-  res.send('POST /places')
+  if (!req.body.pic) {
+    // Default image if one is not provided
+    req.body.pic = 'http://placekitten.com/400/400'
+  }
+  if (!req.body.city) {
+    req.body.city = 'Anytown'
+  }
+  if (!req.body.state) {
+    req.body.state = 'USA'
+  }
+  places.push(req.body)
+  res.redirect('/places')
 })
 
 

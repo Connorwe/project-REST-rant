@@ -1,22 +1,22 @@
 body {
-    background-color: lightblue;
+    background-color: cornflowerblue;
     text-align: center;
 }
 
 h1 {
     text-align: center;
-    color: darkcyan;
+    color: black;
 }
 
 h2 {
-    color: gold;
+    color: goldenrod;
 }
 
 main {
     margin-right: 20px;
     margin-left: 20px;
     padding: 20px;
-    background-color: white;
+    background-color: lightgrey;
 }
 
 nav {
